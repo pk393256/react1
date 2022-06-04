@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h3>Mobile Operating System</h3>
+       <Block arrs={['Android','Blackberry','iPhone','Windows Phone']} />
+    <h3>Mobile Manufacturers</h3>
+    <Block arrs={['Samsung','HTC','Micromax','Apple']} />
+   
     </div>
   );
+}
+function Block(arr){
+  let {arrs}=arr;
+  return(<ul>
+    {arrs.map((prod)=>{
+      return <List prods={prod}/>
+    })}
+  </ul>);
+    
+   
+}
+
+function List(product){
+    let {prods}=product;
+    return <li>{prods}</li>
 }
 
 export default App;
